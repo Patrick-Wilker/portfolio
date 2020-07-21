@@ -1,0 +1,465 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Amiko';
+    color: #2E3440;
+}
+
+a:link{
+    text-decoration:none;
+}
+
+header {
+    background-color: #ECEFF4;
+}
+
+header .header{
+    position: fixed;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgb(236, 239, 244, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+
+.content{
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+//listas aplicação para todos
+ul{
+    list-style-type:none
+}
+
+// lista do header
+ul.list{
+    display: flex;
+}
+
+ul.list .list-item{
+    font-weight: bold;
+    margin: 10px;
+}
+ul.list li.list-item a:hover{
+    color: #034672;
+}
+
+// perfil
+.about{
+    display: flex;
+    align-items: center;
+
+    padding-top: 70px;
+
+    background-color: #ECEFF4;
+}
+
+picture img{
+    border-radius: 50%;
+    max-width: 250px;
+    max-height: 250px;
+    width: auto;
+    height: auto;
+    box-shadow: 0px 0px 40px rgb(172, 172, 165);
+
+    margin: 20px 20px 20px 0;
+}
+
+h2{
+    display: grid;
+    margin-bottom: 15px;
+    font-size: 1.9em;
+}
+
+h2 small{
+    font-size: 12px;;
+}
+
+.profile ul.social-list{
+    display: flex;
+}
+
+.profile ul.social-list li.social-item{
+    margin: 15px 30px;
+    padding: 15px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+.profile ul.social-list .social-item:hover{
+    box-shadow: 0px 0px 25px rgb(172, 172, 165);   
+    transition: 1.2s;
+}
+
+.profile ul.social-list .github{
+    background: linear-gradient(to right, #e0ebeb 0%, #c1d7d7 100%);
+}
+
+.profile ul.social-list .linkedin{
+    background: linear-gradient(to right, #99ebff 0%, #66b3ff 100%);
+}
+
+.profile ul.social-list .social-item a{
+    display: flex;
+}
+
+.profile ul.social-list .social-item .github-icon{
+    width: 20px;
+}
+
+.profile ul.social-list .social-item .linkedin-icon{
+    width: 20px;
+}
+
+
+// main - habilidades, contatos ...
+.main{
+    background-color: #d3d7df;
+}
+
+.content-skills .skills{
+    width: 100%;
+    
+}
+
+.content-skills .skills h2{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content-skills .skills .skills-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    text-align: center;
+}
+
+.content-skills .skills .skills-list .skill-item{
+    margin: 15px 30px;
+    padding: 15px;
+    border: 0px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #ced2e4 0%, #aeb9b9 100%);
+}
+
+.content-skills .skills .skills-list .skill-item.php:hover{
+    //background: linear-gradient(to right, #ced2e4 0%, #858FBC 100%);
+    color: #59659c;
+    //background-color: #c4cadf;
+}
+.content-skills .skills .skills-list .skill-item.javascript:hover{
+    //background: linear-gradient(to right, #faf3b7 0%, #F0D91D 100%);
+    color: #a3910b;
+    //background-color: #faf6c7;
+}
+.content-skills .skills .skills-list .skill-item.html5:hover{
+    //background: linear-gradient(to right, #f7cdba 0%, #E75C22 100%);
+    color: #be3f08;
+    //background-color: #f3d6c8;
+}
+.content-skills .skills .skills-list .skill-item.css3:hover{
+    //background: linear-gradient(to right, #b3e0ff 0%, #006CB4 100%);
+    color: #034672;
+    //background-color: #cae5f7;
+}
+.content-skills .skills .skills-list .skill-item.mvc:hover{
+    //background: linear-gradient(to right, #dee8c9 0%, #97B656 100%);
+    color: #779c26;
+    //background-color: #dce9be;
+}
+.content-skills .skills .skills-list .skill-item.laravel:hover{
+    //background: linear-gradient(to right, #faaaa6 0%, #FF2D20 100%);
+    color: #a5150e;
+    //background-color: #f0c4c2;
+}
+.content-skills .skills .skills-list .skill-item.mysql:hover{
+    //background: linear-gradient(to right, #bddff4 0%, #0F3F5D 100%);
+    color: #075180;
+    //background-color:#b9d9ec ;
+}
+
+// Estilizando os projetos
+
+.content-projects .projects{
+    width: 100%;
+}
+
+.content-projects .projects .portfolio a{
+    display: flex;
+    margin: 20px 0 20px 0;
+    align-items: center;
+}
+
+.content-projects .projects .portfolio a img{
+    border-radius: 8px;
+    margin-right: 80px;
+}
+
+.content-projects .projects .portfolio a img:hover{
+    transform: scale(1.1);
+    transition: 1.3s;
+}
+
+.content-projects .projects .portfolio .about-project h4{
+    font-size: 1.5em;
+}
+.content-projects .projects .portfolio .about-project p{
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.content-projects .projects .portfolio .others{
+    width: 100%;
+    margin-top: 40px;
+}
+.content-projects .projects .portfolio .others a{
+    display: block;
+    text-align: center;
+}
+
+.content-projects .projects .portfolio .others a p{
+    padding: 15px;
+    border: 0px;
+    border-radius: 5px;
+    display: inline;
+    background-color: #3d424b;
+    color: white;
+}
+.content-projects .projects .portfolio .others a p:hover{
+    background-color: #545964;
+    box-shadow: 0px 0px 75px rgb(172, 172, 165);   
+    transition: 1.2s;
+}
+
+
+
+// contato
+
+.contact{
+    width: 100%;
+    background-color: #ECEFF4;
+}
+
+.contact .form{
+    display: block;
+    align-items: center;
+    text-align: center;
+}
+
+.contact .form h2{
+    font-size: 1.9em;
+    margin: 20px 0;
+}
+
+#contact-form{
+    width: 90%;
+    margin: 10px auto;
+}
+
+#contact-form .field{
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type=text]{
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 45%;
+}
+
+input[type=email]{
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 45%;
+}
+
+textarea{
+    border: 0;
+    border-radius: 5px;
+    padding: 15px;
+    width: 100%;
+}
+
+#contact-form .button{
+    margin: 20px 0;
+    text-align: right; 
+}
+#contact-form .button #submit-button{
+    padding: 8px 32px;
+    background-color: #3d424b;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+}
+
+#contact-form .button #submit-button:hover{
+    background-color: #545964;
+    box-shadow: 0px 0px 75px rgb(172, 172, 165);   
+    transition: 1.2s;
+}
+
+
+
+
+// rodapé 
+
+footer{
+    background-color: #D3D7DF;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+footer .content{
+    justify-content: center;
+}
+
+footer .content p{
+    margin: 0 10px;
+}
+
+@media(max-width: 1100px){
+    .content{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 15px;
+    }
+}
+
+@media(max-width: 920px){
+    .profile ul.social-list{
+        display: block;
+    }
+
+}
+
+@media(max-width: 670px){
+    .content{
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    .about{
+        padding-top: 110px;
+    }
+
+    picture img{
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        box-shadow: 0px 0px 40px rgb(172, 172, 165);
+    
+        margin: 20px 22% 20px;
+    }
+
+    .profile ul.social-list{
+        display: flex;
+    }
+
+    .profile ul.social-list li.social-item{
+        margin: 15px 15px;
+        padding: 15px;
+        border: 0px;
+        border-radius: 5px;
+    }
+
+    .content-projects .projects .portfolio a{
+        display: block;
+        margin: 20px 0 20px 0;
+        text-align: center;
+    }
+
+    .content-projects .projects .portfolio a img{
+        border-radius: 8px;
+        margin: 0px;
+    }
+
+    
+    
+
+    #contact-form .field {
+        display: block;
+    }
+
+    input[type=text]{
+        display: block;
+        width: 102%;
+    }
+    input[type=email]{
+        display: block;
+        width: 102%;
+    }
+
+    .button{
+        display: flex;
+    }
+
+    footer .content{
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+@media(max-width: 510px){
+    .content{
+        width: 80%;
+        display: block;
+        margin: 0 auto;
+        padding: 15px;
+    }
+
+    picture img{
+        border-radius: 50%;
+        width: 250px;
+        height: 250px;
+        box-shadow: 0px 0px 40px rgb(172, 172, 165);
+    
+        margin: 20px 0% 20px 20px;
+    }
+
+    .profile ul.social-list{
+        display: block;
+    }
+    
+    .profile ul.social-list li.social-item{
+        margin: 15px 15px;
+        padding: 15px;
+        border: 0px;
+        border-radius: 5px;
+    }
+
+    .content-skills .skills .skills-list{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        text-align: center;
+    }
+
+}
+
+
+@media(max-width: 400px){
+    .content-skills .skills .skills-list .skill-item {
+        margin: 0;
+    }
+
+    #contact-form {
+        width: 80%;
+    }
+}
