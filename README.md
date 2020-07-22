@@ -1,4 +1,4 @@
-<h1 align="center"><strong>Ecoleta</strong></h1>
+<h1 align="center"><strong>Portfólio</strong></h1>
 
 | Computer | Mobile |
 |---------- | --------|
