@@ -11,7 +11,6 @@
 </head>
 <body>
     
-    
 
     <div class="apresentation">
 
@@ -102,7 +101,7 @@
                         
                     </a>
                     <div class="others">
-                        <a target="_blank" href="https://github.com/Patrick-Wilker"><p>Outros projetos</p></a>
+                        <a target="_blank" href="https://github.com/Patrick-Wilker?tab=repositories"><p>Outros projetos</p></a>
                     </div>
                 </div>
             </div>
@@ -111,23 +110,24 @@
         <div class="contact" id="contato">
             <div class="content form">
                 <h2>Contato</h2>
-                <form id="contact-form">
+                <form id="contact-form" method="post" action="{{route('send')}}">
+                    @csrf
                     <div class="field">
-                        <input type="text" name="name" placeholder="Nome" required="" >
-                        <input type="email" name="email" placeholder="Email" required="">
+                        <input type="text" name="name" id="name" placeholder="Nome" required="" >
+                        <input type="email" name="email" id="email" placeholder="Email" required="">
                     </div>
                     
-
                     <div class="field">
                         <textarea required="" placeholder="Me fala um pouco sobre o projeto!" name="message" rows="8" cols="30"></textarea>
                     </div>
-                       
                     <div class="button">
-                        <button type="submit"  id="submit-button">Enviar</button>
-
-                    </div>                    
+                        <button type="submit" onclick="enviar()" id="submit-button">
+                                Enviar
+                        </button>
+                    </div>                
                     
                 </form>
+                
             </div>
         </div>
         
@@ -137,3 +137,16 @@
 
 </body>
 </html>
+<script>
+
+    let nome = document.getElementById('name').value
+    let email = document.getElementById('email').value
+    let mensagem = document.getElementById('message').value
+
+    function enviar(){
+        setTimeout(() => {
+            //alert('Seu e-mail está sendo enviado, não se preocupe!')
+        }, 2000);
+        
+    }
+</script>

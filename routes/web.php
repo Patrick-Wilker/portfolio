@@ -14,3 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+
+Route::post('/',  function(){
+    Mail::raw($_POST['message']
+    , function($m){
+        $m->from('patrickvieiramota@gmail.com', 'Patrick');
+        $m->to('patrickvieiramota@gmail.com');
+        $m->subject('Contato - Patrick Mota');
+        $m->replyTo($_POST['email'], $_POST['name']);
+        
+    });
+    return back()->withInput();
+    
+})->name('send');
