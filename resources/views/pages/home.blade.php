@@ -113,15 +113,15 @@
                 <form id="contact-form" method="post" action="{{route('send')}}">
                     @csrf
                     <div class="field">
-                        <input type="text" name="name" id="name" placeholder="Nome" required="" >
-                        <input type="email" name="email" id="email" placeholder="Email" required="">
+                        <input type="text" name="name" id="name" onfocusout="setName()" placeholder="Nome" required="" >
+                        <input type="email" name="email" id="email" onfocusout="setEmail()" placeholder="Email" required="">
                     </div>
                     
                     <div class="field">
-                        <textarea required="" placeholder="Me fala um pouco sobre o projeto!" name="message" rows="8" cols="30"></textarea>
+                        <textarea required="" id="message" placeholder="Me fala um pouco sobre o projeto!" onfocusout="setMessage()" name="message" rows="8" cols="30"></textarea>
                     </div>
-                    <div class="button">
-                        <button type="submit" onclick="enviar()" id="submit-button">
+                    <div class="button ">
+                        <button type="submit" class="d-none" onclick="enviar()" id="submit-button">
                                 Enviar
                         </button>
                     </div>                
@@ -133,20 +133,51 @@
         
     </div>
 
+    <div id='modal' class="d-none-modal">
+        <div class="modal">
+            <h1 class="modal">E-mail enviado com sucesso!</h1>
+        </div>
+    </div>
+
     @include('layouts.footer')
 
 </body>
 </html>
+
 <script>
 
-    let nome = document.getElementById('name').value
-    let email = document.getElementById('email').value
-    let mensagem = document.getElementById('message').value
+    let nome
+    let email
+    let mensagem
+
+    function setName(){
+        nome = document.getElementById('name').value
+        remove()
+    }
+    function setEmail(){
+        email = document.getElementById('email').value
+        remove()
+    }
+    function setMessage(){
+        mensagem = document.getElementById('message').value
+        remove()
+    }
+    
+    function remove(){
+        if(nome!=undefined && nome!='' && email != undefined && email != '' && mensagem != undefined && mensagem != ''){
+            let elemento = document.getElementById('submit-button')
+            elemento.removeAttribute('class')
+        }else{
+            document.getElementById('submit-button').classList.add("d-none");
+        }
+    }
 
     function enviar(){
         setTimeout(() => {
-            //alert('Seu e-mail está sendo enviado, não se preocupe!')
-        }, 2000);
-        
+            let div = document.getElementById('modal')
+            div.removeAttribute('class')
+        }, 700);
     }
+    
+
 </script>

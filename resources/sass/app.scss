@@ -309,7 +309,37 @@ textarea{
 }
 
 
+.d-none{
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
+}
 
+
+// modal caso o email seja enviado
+.d-none-modal{
+    display: none;
+}
+.modal{
+    background-color: #1d1727ef;
+    opacity: 0.7;
+
+    height: 100vh;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    transition: 400ms;
+}
+.modal h1{
+    color: #0aaf20ef;
+    opacity: 1;
+}
 
 // rodapé 
 
@@ -347,6 +377,18 @@ footer .content p{
 }
 
 @media(max-width: 670px){
+
+    header h1{
+        text-align: center;
+    }
+
+    header ul.list .list-item {
+        font-weight: bold;
+        margin: 5px auto 0;
+        text-align: center;
+        width: 100%;
+    }
+
     .content{
         width: 80%;
         display: block;
@@ -451,10 +493,16 @@ footer .content p{
         text-align: center;
     }
 
+
+    .modal h1{
+        text-align: center;
+    }
+
 }
 
 
 @media(max-width: 400px){
+
     .content-skills .skills .skills-list .skill-item {
         margin: 0;
     }
