@@ -18,6 +18,41 @@ Trata-se do meu site, meu portfólio, onde poderão entrar em contato comigo. Pa
 * Composer
 * Laravel
 
+<h2> <img src="https://user-images.githubusercontent.com/38691922/77794952-838aef00-704b-11ea-84ff-cb3c7a61a815.png" height="30" width="30">  Configuração do formulário de contato</h2>
+
+Para que o formulario de contato funcione é necessário modificar o arquivo .env nos seguintes pontos:
+
+```
+    MAIL_MAILER=smtp (se for usar o gmail)
+    MAIL_HOST=smtp.gmail.com (caso seja o gmail)
+    MAIL_PORT=587 (se for usar o gmail a porta é a 587)
+    MAIL_USERNAME=coloque seu e-mail 
+    MAIL_PASSWORD=sua senha
+    MAIL_ENCRYPTION=tls (se for usar o gmail)
+
+```
+
+E ainda será necessário modificar a rota
+
+```
+   Route::post('/',  function(){
+    Mail::raw($_POST['message']
+    , function($m){
+        $m->from('SEU E-MAIL CONFIGURADO NO ARQUIVO .ENV', 'SEU NOME');
+        $m->to('PARA ONDE O E-MAIL VAI, PODE SER O E-MAIL ANTERIOR');
+        $m->subject('NOME DO ASSUNTO DO E-MAIL');
+        $m->replyTo($_POST['email'], $_POST['name']);
+        
+    });
+    return back()->withInput();
+    
+    })->name('send');
+
+```
+Se for utilizar o gmail, vai ter que permitir <strong>App menos seguros</strong> ter acesso a sua conta, basta clicar [aqui](https://myaccount.google.com/lesssecureapps) e ativar.
+(Se você ainda tiver problemas com permissão, permita acesso a sua conta [aqui](https://accounts.google.com/b/0/DisplayUnlockCaptcha))
+
+De qualquer forma, é melhor usar um e-mail comercial.
 
 <h2><img src="https://user-images.githubusercontent.com/38691922/77791613-bcc06080-7045-11ea-864b-78684851af42.png" 
          height="30" width="30"> Como contribuir</h2>
